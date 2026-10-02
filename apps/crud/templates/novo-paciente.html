@@ -1,59 +1,79 @@
 {% extends 'base-crud.html' %}
 {% block title %}Novo Paciente{% endblock %}
+{% load static %}
 {% block content %}
-    <h1 class="mt-5">
-        Cadastrar Novo Paciente
-    </h1>
-    <hr>
-    {% if error %}<p>{{ error }}</p>{% endif %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-12 col-md-8 col-lg-6 mb-3">
-                <label for="usermane" class="form-label">
-                    Nome do Paciente:
-                </label>
-                <input type="text" class="form-control" name="username" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                <label for="cpf" class="form-label">
-                    CPF do Paciente:
-                </label>
-                <input type="text" class="form-control" name="cpf" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                <label for="email" class="form-label">
-                    E-mail do Paciente:
-                </label>
-                <input type="email" class="form-control" name="email" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                <label for="telefone" class="form-label">
-                    Telefone do Paciente:
-                </label>
-                <input type="tel" class="form-control" name="telefone" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                <label for="data_nascimento" class="form-label">
-                    Data de Nascimento do Paciente:
-                </label>
-                <input type="date" class="form-control" name="data_nascimento" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-4">
-                <button type="submit" class="btn btn-primary">
-                    Cadastrar
-                </button>
-            </div>     
-        </div>
-    </form>
+<h1 class="mt-5">
+    Cadastrar Novo Paciente
+</h1>
+<hr>
+{% if error %}<p>{{ error }}</p>{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mb-3">
+            <label for="usermane" class="form-label">
+                
+                <!-- Nome -->
+                <div class="mb-4">
+                    <label for="username" class="form-label fw-semibold">
+                        <i class="bi bi-person me-1 text-primary"></i>
+                        Nome do Paciente
+                    </label>
+                    <input type="text" class="form-control form-control-lg" id="username" name="username" required>
+                </div>
+
+
+                <div class="row">
+                    <!-- CPF -->
+                    <div class="col-md-6 mb-4">
+                        <label for="cpf" class="form-label fw-semibold">
+                            <i class="bi bi-card-text me-1 text-primary"></i>
+                            CPF
+                        </label>
+                        <input type="text" class="form-control form-control-lg" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                    </div>
+
+
+                    <!-- Telefone -->
+                    <div class="col-md-6 mb-4">
+                        <label for="telefone" class="form-label fw-semibold">
+                            <i class="bi bi-telephone me-1 text-primary"></i>
+                            Telefone
+                        </label>
+
+                        <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <!-- E-mail -->
+                    <div class="col-md-7 mb-4">
+                        <label for="email" class="form-label fw-semibold">
+                            <i class="bi bi-envelope me-1 text-primary"></i>
+                            E-mail
+                        </label>
+                        <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                    </div>
+
+
+                    <!-- Data de nascimento -->
+                    <div class="col-md-5 mb-4">
+                        <label for="data_nascimento" class="form-label fw-semibold">
+                            <i class="bi bi-calendar-event me-1 text-primary"></i>
+                            Data de Nascimento
+                        </label>
+                        <input type="date" class="form-control form-control-lg" id="data_nascimento" name="data_nascimento" placeholder="DD/MM/AAAA" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">
+
+                            Cadastrar
+                        </button>
+                    </div>
+                </div>
+</form>
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
