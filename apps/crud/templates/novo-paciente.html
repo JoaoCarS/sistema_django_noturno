@@ -7,19 +7,19 @@
 </h1>
 <hr>
 {% if error %}<p>{{ error }}</p>{% endif %}
-<form action="" method="POST">
+<form action="{% url 'novo-paciente' %}" method="POST">
     {% csrf_token %}
     <div class="row">
         <div class="col-12 col-md-8 col-lg-6 mb-3">
-            <label for="usermane" class="form-label">
+            <!-- <label for="nome" class="form-label"> -->
                 
                 <!-- Nome -->
                 <div class="mb-4">
-                    <label for="username" class="form-label fw-semibold">
+                    <label for="nome" class="form-label fw-semibold">
                         <i class="bi bi-person me-1 text-primary"></i>
                         Nome do Paciente
                     </label>
-                    <input type="text" class="form-control form-control-lg" id="username" name="username" required>
+                    <input type="text" class="form-control form-control-lg" id="nome" name="nome" required>
                 </div>
 
 
