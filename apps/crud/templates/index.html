@@ -48,6 +48,13 @@
                                         Alterar
                                     </a>
 
+                                    <a href="{% url 'excluir_paciente' paciente.codigo_paciente %}" class="btn btn-sm btn-danger">Excluir</a> 
+                                    <ul>
+                                        <li>
+                                            {{ paciente.sintomas }}
+                                        </li>
+                                    </ul>
+
                                 </td>
                                 </td>
                             </tr>

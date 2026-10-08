@@ -65,6 +65,13 @@
                         </label>
                         <input type="date" class="form-control form-control-lg" id="data_nascimento" name="data_nascimento" placeholder="DD/MM/AAAA" value="{{ paciente.data_nascimento|date:'Y-m-d' }}" required>
                     </div>
+                    <div class="col-md-5 mb-4">
+                        <label for="sintomas" class="form-label fw-semibold">
+                            <i class="bi bi-text me-1 text-primary"></i>
+                            Sintomas
+                        </label>
+                        <input type="text" class="form-control form-control-lg" id="sintomas" name="sintomas"  value="{{ paciente.sintomas }}" required>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="mt-4">
